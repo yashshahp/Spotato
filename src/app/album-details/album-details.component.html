@@ -1,0 +1,31 @@
+<mat-card *ngIf="albumArray">
+  <mat-card-header>
+
+    <mat-card-title></mat-card-title>
+
+    <mat-card-subtitle>
+
+    </mat-card-subtitle>
+
+  </mat-card-header>
+
+  <mat-card-content>
+    <div>
+      <img src="{{coverUrl}}">
+    </div>
+    <div>
+      <a href="{{url}}" target="_blank">
+        <p>Album : {{albumArray.name}}</p>
+      </a>
+    </div>
+    <p>
+      Date : {{date}}
+    </p>
+
+    <!-- <mat-card-actions>
+      <button mat-icon-button color="warn" aria-label="Example icon-button with a heart icon">
+        <mat-icon>favorite</mat-icon>
+      </button>
+    </mat-card-actions> -->
+    <mat-divider class="seperator"> </mat-divider>
+  </mat-card-content>

@@ -1,0 +1,62 @@
+<div fxLayout="row" class="row">
+    <div fxFlex="20%" class="grey">
+        {{artistName}}
+    </div>
+    <div fxFlex="80%">
+        <img src="{{backg}}" height="480px" width="480px">
+    </div>
+</div>
+<mat-divider class="burp"></mat-divider>
+<div fxLayout="row" class="row">
+    <div fxFlex="70%">
+        <p class="grey">Top Songs</p>
+        <div class="white" *ngFor="let topTrack of topTracks" fxLayout="row" class="row">
+
+            <div fxFlex="10%">
+                <img src="{{topTrack.album.images[2].url}}">
+            </div>
+
+            <div fxFlex="30%" class="white">
+                {{topTrack.name}}
+            </div>
+            <div fxFlex="10%">
+                <div *ngFor="let artist of topTrack.artists" class="white">
+                    {{artist.name}}
+                </div>
+            </div>
+            <div fxFlex="20%" class="white">
+                {{topTrack.album.name}}
+            </div>
+        </div>
+    </div>
+    <div fxFlex="30%">
+        <p class="grey">Related Artists</p>
+        <div class="white" *ngFor="let related of relatedArtists" fxLayout="row" class="row">
+            <div fxFlex="20%">
+                <img src="{{related.images[2].url}}" height="64px" width="64px">
+            </div>
+            <div>
+            <div fxFlex="0%" class="white">
+                {{related.name}}
+            </div>
+        </div>
+        </div>
+    </div>
+</div>
+<mat-divider class="burp"></mat-divider>
+<p class="grey">Albums</p>
+<div class="white" *ngFor="let artistAlbum of artistAlbums" fxLayout="row">
+    <div fxFlex="5%">
+        <img src="{{artistAlbum.images[2].url}}">
+    </div>
+    <div fxFlex="30%">
+        {{artistAlbum.name}}
+    </div>
+    <div fxFlex="30%">
+        {{artistAlbum.release_date}}
+    </div>
+    <div fxFlex="30%">
+      Total Tracks: {{artistAlbum.total_tracks}}
+    </div>
+</div>
+<mat-divider class="burp"></mat-divider>

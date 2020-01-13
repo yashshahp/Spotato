@@ -1,0 +1,36 @@
+<mat-card *ngIf="trackArray">
+  <mat-card-content>
+    <div fxLayout="row" class="row">
+      <div fxFlex="10%" class="lable">
+        <img [src]="trackCoverUrl">
+      </div>
+      <div fxLayout="column" class="col" fxFlex="10%">
+        <div fxFlex="30%" class="lable">
+          {{trackArray.name}}
+        </div>
+        <div fxFlex="20%">
+          <div fxLayout="row">
+            <app-artists-details [trackArtist]=" trackArtist" *ngFor="let trackArtist of trackArtists">
+            </app-artists-details>
+            
+          </div>
+        </div>
+      </div>
+      <div fxFlex="10%" class="lable">
+        {{timeMin}}:{{timeSec}}
+      </div>
+
+      <div fxFlex="10%" class="lable">
+        <a href="{{trackArray.album.external_urls.spotify}}" target="_blank">
+          <p>{{trackArray.album.name}}</p>
+        </a>
+      </div>
+      <!-- <div>
+        <button mat-icon-button color="warn" aria-label="Example icon-button with a heart icon">
+          <mat-icon>favorite</mat-icon>
+        </button>
+      </div> -->
+    </div>
+
+    <mat-divider class="seperator"> </mat-divider>
+  </mat-card-content>

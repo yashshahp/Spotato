@@ -1,0 +1,20 @@
+<div *ngIf="soundtracks">
+    <div class="bg">
+        <p>
+            Tracks with {{trackName}}
+        </p>
+    </div>
+    <app-song-details [trackArray]="soundtrack" *ngFor="let soundtrack of soundtracks"></app-song-details>
+    <div class="bg">
+        <p>
+            Albums with {{trackName}}
+        </p>
+    </div>
+    <app-album-details [albumArray]="album" *ngFor="let album of albums"></app-album-details>
+    <div class="bg">
+        <p>
+            Artists with {{trackName}}
+        </p>
+    </div>
+    <app-artists [artistArray]="artist" *ngFor="let artist of artists"></app-artists>
+</div>
