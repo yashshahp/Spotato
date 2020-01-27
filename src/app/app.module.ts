@@ -17,7 +17,10 @@ import { AlbumDetailsComponent } from './album-details/album-details.component';
 import { ArtistsComponent } from './artists/artists.component';
 import { ArtistDisplayComponent } from './artist-display/artist-display.component';
 import { RequestInterceptor } from './request.interceptor';
-
+import { StoreModule } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
+import { TracksEffects } from './store/tracks.effects';
+import {reducer} from './store/tracks.reducer'
 
 
 @NgModule({
@@ -45,7 +48,9 @@ import { RequestInterceptor } from './request.interceptor';
     MatDividerModule,
     MatListModule,
     HttpClientModule,
-    MatCardModule
+    MatCardModule,
+    StoreModule.forRoot({tracks:reducer, albums:reducer, artists:reducer}),
+    EffectsModule.forRoot([TracksEffects]),
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,

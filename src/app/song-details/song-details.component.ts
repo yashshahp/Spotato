@@ -6,7 +6,7 @@ import { Component, OnInit, Input, ɵConsole } from '@angular/core';
   styleUrls: ['./song-details.component.scss']
 })
 export class SongDetailsComponent implements OnInit {
-  @Input() trackArray:any
+  @Input() track:any
   constructor() { }
   timeMin;
   timeSec;
@@ -15,19 +15,19 @@ export class SongDetailsComponent implements OnInit {
   TrackalbumCovers;
   trackCoverUrl;
   ngOnInit() {
-    if(this.trackArray)
+    if(this.track)
     {
-    this.trackArtists=this.trackArray.artists
+    this.trackArtists=this.track.artists
  
-     if(this.trackArray.duration_ms){
-      this.timeMin=Math.floor(this.trackArray.duration_ms/60000);
-      this.sec=Math.floor(this.trackArray.duration_ms/1000);
+     if(this.track.duration_ms){
+      this.timeMin=Math.floor(this.track.duration_ms/60000);
+      this.sec=Math.floor(this.track.duration_ms/1000);
       this.timeSec=this.sec%60;
       if(this.timeSec<10){
         this,this.timeSec='0'+this.timeSec;
       }
       }
-      this.TrackalbumCovers=this.trackArray.album.images;
+      this.TrackalbumCovers=this.track.album.images;
       this.trackCoverUrl=this.TrackalbumCovers[2].url
      
       }

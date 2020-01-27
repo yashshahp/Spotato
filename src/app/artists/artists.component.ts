@@ -25,7 +25,10 @@ export class ArtistsComponent implements OnInit {
       this.artistCovers = this.artistArray.images;
       let n = this.artistCovers.length
       if (this.artistArray.images) {
-        this.coverUrl = this.artistCovers[n - 1].url
+        if(n>0){
+          this.coverUrl = this.artistCovers[n - 1].url
+        }
+        
       }
 
     }

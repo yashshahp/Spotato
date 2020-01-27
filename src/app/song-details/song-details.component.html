@@ -1,4 +1,4 @@
-<mat-card *ngIf="trackArray">
+<mat-card *ngIf="track">
   <mat-card-content>
     <div fxLayout="row" class="row">
       <div fxFlex="10%" class="lable">
@@ -6,7 +6,7 @@
       </div>
       <div fxLayout="column" class="col" fxFlex="10%">
         <div fxFlex="30%" class="lable">
-          {{trackArray.name}}
+          {{track.name}}
         </div>
         <div fxFlex="20%">
           <div fxLayout="row">
@@ -21,8 +21,8 @@
       </div>
 
       <div fxFlex="10%" class="lable">
-        <a href="{{trackArray.album.external_urls.spotify}}" target="_blank">
-          <p>{{trackArray.album.name}}</p>
+        <a href="{{track.album.external_urls.spotify}}" target="_blank">
+          <p>{{track.album?.name}}</p>
         </a>
       </div>
       <!-- <div>
